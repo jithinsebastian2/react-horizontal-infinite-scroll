@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function InfiniteScroll({
+function InfiniteScroll({
   mainWrapper = <div />,
   children,
   loader,
@@ -47,3 +47,5 @@ InfiniteScroll.defaultProps = {
 //   loader: PropTypes.element,
 //   dipatchScroll: PropTypes.func.isRequired,
 // };
+
+module.exports.InfiniteScroll = InfiniteScroll;
