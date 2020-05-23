@@ -1,0 +1,24 @@
+{
+  "name": "react-horizontal-infinite-scroll",
+  "version": "1.0.0",
+  "description": "To handle infinite scroll with a simple, lightweight and high responsive manner with this infinite-scroll-package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jithinsebastian2/react-horizontal-infinite-scroll.git"
+  },
+  "keywords": [
+    "react",
+    "infinite",
+    "scroller"
+  ],
+  "author": "Jithin Sebastian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jithinsebastian2/react-horizontal-infinite-scroll/issues"
+  },
+  "homepage": "https://github.com/jithinsebastian2/react-horizontal-infinite-scroll#readme"
+}
