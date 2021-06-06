@@ -1,6 +1,6 @@
 {
   "name": "react-horizontal-infinite-scroll",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "To handle infinite scroll with a simple, lightweight and high responsive manner with this infinite-scroll-package.",
   "main": "index.js",
   "scripts": {
