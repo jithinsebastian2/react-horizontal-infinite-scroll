@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 function InfiniteScroll({
-  mainWrapper = <div />,
+  mainWrapper = null,
   children,
   loader,
   dipatchScroll,
@@ -35,7 +35,7 @@ function InfiniteScroll({
 }
 
 InfiniteScroll.defaultProps = {
-  mainWrapper: <div />, //Should be html tag or React element
+  mainWrapper: null, //Should be html tag or React element
   loader: null, //It should be a React element.
   dipatchScroll: (data) => {
     console.log("dipatchScroll", data);
