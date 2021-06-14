@@ -8,21 +8,25 @@ function InfiniteScroll({
 }) {
   let mainWrapperRef = useRef();
 
-  const triggerScroll = (mainWrapperRef) => {
-    if (
-      mainWrapperRef.current &&
-      Object.keys(mainWrapperRef.current).length > 0
-    ) {
-      const element = mainWrapperRef.current;
-      element.onscroll = (e) => {
-        if (
-          e.target.scrollTop + e.target.offsetHeight ===
-          e.target.scrollHeight
-        )
-          dipatchScroll({ scrollHeight: e.target.scrollHeight });
-      };
-    }
-  };
+  const triggerScroll = React.useCallback(
+    (mainWrapperRef) => {
+      if (
+        mainWrapperRef.current &&
+        Object.keys(mainWrapperRef.current).length > 0
+      ) {
+        const element = mainWrapperRef.current;
+        element.onscroll = (e) => {
+          if (
+            e.target.scrollWidth - e.target.scrollLeft - e.target.offsetWidth <
+            100
+          ) {
+            dipatchScroll({ scrollHeight: e.target.scrollHeight });
+          }
+        };
+      }
+    },
+    [mainWrapperRef, dipatchScroll]
+  );
 
   useEffect(() => {
     triggerScroll(mainWrapperRef);
@@ -34,18 +38,4 @@ function InfiniteScroll({
   ]);
 }
 
-InfiniteScroll.defaultProps = {
-  mainWrapper: null, //Should be html tag or React element
-  loader: null, //It should be a React element.
-  dipatchScroll: (data) => {
-    console.log("dipatchScroll", data);
-  }, //Used to handle scroll callback event in the parent.
-};
-
-// InfiniteScroll.propTypes = {
-//   mainWrapper: PropTypes.element.isRequired,
-//   loader: PropTypes.element,
-//   dipatchScroll: PropTypes.func.isRequired,
-// };
-
-module.exports.InfiniteScroll = InfiniteScroll;
+export default InfiniteScroll;
